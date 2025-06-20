@@ -55,14 +55,7 @@
     const dogImage = ref("")
     createApp({
       setup() {
-        const form = ref({
-          dog_id: '',
-          requested_time: '',
-          duration_minutes: '',
-          location: ''
-        });
 
-        const walks = ref([]);
         const message = ref('');
         const error = ref('');
 
@@ -84,7 +77,7 @@
             const result = await res.json();
 
             for (let dog in result) {
-              dog.dogImage
+              dog.image = await 
             }
             if (!res.ok) throw new Error(result.error || 'Error submitting walk request');
 
