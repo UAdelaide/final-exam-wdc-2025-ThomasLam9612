@@ -84,7 +84,7 @@
             const result = await res.json();
 
             for (let dog in result) {
-              
+              dog.dogImage
             }
             if (!res.ok) throw new Error(result.error || 'Error submitting walk request');
 
