@@ -7,7 +7,7 @@ const MySQLStore = require("express-mysql-session")(session);
 
 const app = express();
 const store = new MySQLStore({
-    socketPath: '/var/run/mysqld/mysqld.sock',
+  host: "localhost",
   user: "root",
   password: "root",
   database: "DogWalkService"
