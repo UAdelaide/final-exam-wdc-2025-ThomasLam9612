@@ -31,6 +31,14 @@
     const { createApp, ref, onMounnted } = Vue;
     createApp({
       setup(){
+
+      }
+      data() {
+        return {
+          dogImages: ''
+        };
+      },
+      methods: {
         async getDog(){
             const res =await fetch ("https://dog.ceo/api/breeds/image/random");
             console.log(res)
@@ -39,14 +47,6 @@
             this.dogImages = data.message
         }
       },
-      }
-      data() {
-        return {
-          dogImages: ''
-        };
-      },
-      methods: {
-
     }).mount('#app');
   </script>
 
