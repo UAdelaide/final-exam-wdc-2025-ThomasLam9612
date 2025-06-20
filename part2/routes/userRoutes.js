@@ -80,6 +80,7 @@ router.post('/logout', async (req, res) => {
 router.post('/getPets', async (req, res) => {
   console.log("getPets");
     if (!req.session.user) {
+      console.log("not !!!");
     return res.status(401).json({ error: 'Not logged in' });
   }
   console.log(req.session.user);
