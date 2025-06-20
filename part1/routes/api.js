@@ -1,9 +1,9 @@
 const db = require("mysql2/promise");
 const pool = db.createPool({
-    host: 127.0.0.,
-    user: root,
-    password: root,
-    database: DogWalkService
+    host: "127.0.0.1",
+    user: "root",
+    password: "root",
+    database: "DogWalkService"
 
 });
 
