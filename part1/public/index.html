@@ -75,12 +75,12 @@
           try {
             const res = await fetch('/api/dogs');
             const result = await res.json();
-
+            console.log(result)
             for (let dog in result) {
               dog.image = await getPetsImages();
             }
             dogs.value = result;
-
+            console.
           } catch (err) {
 
           }
