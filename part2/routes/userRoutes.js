@@ -90,6 +90,7 @@ router.get('/getPets', async (req, res) => {
       [req.session.user.user_id]
     );
     res.json(rows);
+    console.log(rows);
   } catch (err) {
     res.status(500).json({ error: 'Failed to load dogs' });
   }
