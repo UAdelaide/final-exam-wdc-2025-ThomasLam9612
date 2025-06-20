@@ -28,7 +28,7 @@ const summary = `SELECT
     SELECT COUNT(*)
     FROM WalkRequests wr2
     JOIN WalkApplications wa2 ON wr2.request_id = wa2.request_id
-    WHERE wa2.walker_id = u.user_id AND wr2.status = 'completed'
+    --WHERE wa2.walker_id = u.user_id AND wr2.status = 'completed'
   ) AS completed_walks
 FROM Users u
 LEFT JOIN WalkRatings r ON r.walker_id = u.user_id
