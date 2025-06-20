@@ -48,44 +48,7 @@
       },
     }).mount('#app');
   </script> -->
-  <script>
 
-    const { createApp } = Vue;
-    createApp({
-      data() {
-        return {
-          message: 'Welcome to the Dog Walking Service!',
-          email:'',
-          password:'',
-          errorMess:''
-        };
-      },
-      methods:{
-        async handleLogin(){
-          const res = await fetch('/api/users/login',{
-            method:"POST",
-            headers:{'Content-Type':'application/json'},
-            body:JSON.stringify({
-              email:this.email,
-              password:this.password
-            })
-          })
-          console.log(res)
-          const data = await res.json();
-          console.log("data.role",data)
-          if (data.user.role =="owner") {
-            console.log("owner")
-            window.location.href = '/owner-dashboard.html';
-          }else if (data.user.role =="walker"){
-            window.location.href = '/walker-dashboard.html';
-          }else{
-            this.errorMess = "Unknown role.";
-          }
-          console.log(data)
-        }
-      }
-    }).mount('#app');
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
