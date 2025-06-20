@@ -81,7 +81,7 @@ router.get('/walkrequests/open', async function(req, res, next) {
  */
 router.get('/walkers/summary', async function(req, res, next) {
     console.log("!111");
-    const [rows] = await pool.query(openWalkRequests);
+    const [rows] = await pool.query(summary);
     return res.send(rows);
 });
 module.exports = router;
