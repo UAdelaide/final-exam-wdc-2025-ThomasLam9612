@@ -9,7 +9,7 @@ const app = express();
 const store = new MySQLStore({
   host: "localhost",
   user: "root",
-  password: "root",
+//   password: "root",
   database: "DogWalkService"
 });
 app.use(session({
