@@ -63,7 +63,18 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', async (req, res) => {
-  req.session.
+  req.session.destroy((err) => {
+    if (err) {
+      console.error('Failed to destroy session:', err);
+      return res.cc('Logout failed');
+    }
+
+    res.clearCookie('connect.sid');
+    res.send({
+      status: 0,
+      msg: 'Logout successful!'
+    });
+  });
 });
 
 
