@@ -54,7 +54,7 @@
           console.log(res)
           const data = await res.json();
           console.log("data.role",data)
-          if (data.role =="owner") {
+          if (data.user.role =="owner") {
             console.log("owner")
               window.location.href = '/owner-dashboard.html';
           }else if (data.role =="walker"){
