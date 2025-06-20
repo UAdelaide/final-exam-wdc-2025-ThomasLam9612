@@ -79,21 +79,10 @@
             for (let dog in result) {
               dog.image = await getPetsImages();
             }
-            dogs.value = 
-            if (!res.ok) throw new Error(result.error || 'Error submitting walk request');
+            dogs.value = result;
 
-            message.value = result.message;
-            error.value = '';
-            form.value = {
-              dog_id: '',
-              requested_time: '',
-              duration_minutes: '',
-              location: ''
-            };
-            loadWalks();
           } catch (err) {
-            error.value = err.message;
-            message.value = '';
+ 
           }
         }
 
