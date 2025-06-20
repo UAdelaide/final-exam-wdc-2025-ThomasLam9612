@@ -72,7 +72,7 @@
             console.log(res)
             const data = await res.json();
             console.log(data);
-            this.dogImages = data.message
+            return dogImages = data.message
           } catch (err) {
             error.value = 'Failed to load walk requests';
           }
