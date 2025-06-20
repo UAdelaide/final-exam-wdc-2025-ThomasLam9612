@@ -82,18 +82,7 @@ router.post('/getPets', async (req, res) => {
     if (!req.session.user) {
     return res.status(401).json({ error: 'Not logged in' });
   }
-  req.session.destroy((err) => {
-    if (err) {
-      console.error('Failed to destroy session:', err);
-      return res.cc('Logout failed');
-    }
-
-    res.clearCookie('connect.sid');
-    res.send({
-      status: 0,
-      msg: 'Logout successful!'
-    });
-  });
+  
 });
 
 module.exports = router;
