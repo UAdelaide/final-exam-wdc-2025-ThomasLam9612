@@ -77,7 +77,7 @@ router.post('/logout', async (req, res) => {
   });
 });
 
-router.post('/getPets', async (req, res) => {
+router.get('/getPets', async (req, res) => {
   console.log("getPets");
     if (!req.session.user) {
       console.log("not !!!");
