@@ -18,3 +18,5 @@ router.get('/dogs', function(req, res, next) {
     const [rows] = pool.query(SELECT_Dog_Info);
     return res.send(rows);
 });
+
+module.exports
