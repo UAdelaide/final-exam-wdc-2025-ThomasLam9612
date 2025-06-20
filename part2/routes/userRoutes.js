@@ -79,6 +79,9 @@ router.post('/logout', async (req, res) => {
 
 router.post('/getPets', async (req, res) => {
   console.log("getPets");
+    if (!req.session.user) {
+    return res.status(401).json({ error: 'Not logged in' });
+  }
   req.session.destroy((err) => {
     if (err) {
       console.error('Failed to destroy session:', err);
