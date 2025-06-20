@@ -42,7 +42,7 @@
         };
       },
       methods:{
-        handleLogin(){
+        async handleLogin(){
           const res = fetch('/login',{
             method:"POST",
             headers:{'Content-Type':'application/json'},
@@ -51,6 +51,9 @@
               password:this.password
             })
           })
+          console.log(res)
+          const data = await res.json();
+
         }
 
 
