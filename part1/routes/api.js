@@ -22,4 +22,10 @@ router.get('/dogs', async function(req, res, next) {
     return res.send(rows);
 });
 
+
+router.get('/walkrequests/open', async function(req, res, next) {
+    console.log("!111");
+    const [rows] = await pool.query(SELECT_Dog_Info);
+    return res.send(rows);
+});
 module.exports = router;
