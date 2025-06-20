@@ -70,7 +70,7 @@
             error.value = 'cannot Fetch Current User';
           }
         }
-        }
+
 
         async function applyToWalk(requestId) {
           if(!currentUser.value) {
@@ -92,7 +92,7 @@
             error.value = err.message;
             message.value = '';
           }
-        
+        }
         async function logout() {
           try {
            const res = await fetch('/api/users/logout', {
