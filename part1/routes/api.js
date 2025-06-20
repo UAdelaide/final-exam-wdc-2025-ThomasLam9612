@@ -6,6 +6,9 @@ db.createPool({
     database:DogWalkService
 
 });
+
+const SELECT_APPLICATION_FORM =
+  "SELECT * FROM applicationforms WHERE petId =? and userId =?";
 router.get('/', function(req, res, next) {
-  
+
 });
