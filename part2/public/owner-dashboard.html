@@ -150,10 +150,20 @@
             message.value = '';
           }
         }
-
+        
+        async function checkMe() {
+            const res = await fetch('/api/users/me',{
+              credentials: 'include'
+            });
+            console.log(res)
+            if (!res.ok) {
+              window.location.href = '/index.html';
+            }
+        }
         onMounted(() => {
           loadWalks();
           getPets();
+          checkMe();
         });
 
         return {
