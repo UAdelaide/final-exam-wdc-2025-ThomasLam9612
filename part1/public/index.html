@@ -37,7 +37,9 @@
       methods: {
         async getDog(){
             const res = fetch ("https://dog.ceo/dog-api/documentation/random");
-            constawait res.json();
+            const data = await res.json();
+            console.log(data);
+            this.d
         }
       }
     }).mount('#app');
