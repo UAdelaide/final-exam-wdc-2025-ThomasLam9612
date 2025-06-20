@@ -7,8 +7,14 @@ db.createPool({
 
 });
 
+/**
+ *     "dog_name": "Max",
+    "size": "medium",
+    "owner_username": "alice123"
+  },
+ */
 const SELECT_APPLICATION_FORM =
-  "SELECT * FROM applicationforms WHERE petId =? and userId =?";
+  "SELECT * FROM Dogs";
 router.get('/', function(req, res, next) {
 
 });
