@@ -53,31 +53,12 @@
           })
           console.log(res)
           const data = await res.json();
-          /*
-          message
 :
-"Login successful"
-user
-:
-role
-:
-"owner"
-user_id
-:
-1
-username
-:
-"alice123"
-[[Prototype]]
-:
-Object
-[[Prototype]]
-:
-Object
-          */
           if (data.role =="owner") {
-                  window.location.href = '/owner-dashboard.html';
-          }else if (data.role =="walker")
+              window.location.href = '/owner-dashboard.html';
+          }else if (data.role =="walker"){
+window.location.href = '/owner-dashboard.html';
+          }
           console.log(data)
         }
 
