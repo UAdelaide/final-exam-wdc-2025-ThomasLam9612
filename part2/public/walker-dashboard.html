@@ -9,6 +9,9 @@
 </head>
 <body class="bg-light">
   <div id="app" class="container py-4">
+    <div>
+      
+    </div>
     <h1 class="mb-4 text-success">Walker Dashboard</h1>
 
     <!-- Alert messages -->
@@ -73,6 +76,22 @@
             message.value = '';
           }
         }
+        async function logout() {
+          try {
+           const res = await fetch('/api/users/logout', {
+            method: 'POST',
+            credentials: 'include'
+          });
+          if (res.ok) {
+            window.location.href = '/index.html';
+          } else {
+            error.value = 'Logout failed';
+          }
+        } catch (err) {
+          console.error(err);
+          error.value = 'Logout request failed';
+        }
+      }
 
         onMounted(() => {
           loadWalkRequests();
