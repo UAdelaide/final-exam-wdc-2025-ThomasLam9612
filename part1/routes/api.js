@@ -22,7 +22,18 @@ router.get('/dogs', async function(req, res, next) {
     return res.send(rows);
 });
 
-
+/**
+ * [
+  {
+    "request_id": 1,
+    "dog_name": "Max",
+    "requested_time": "2025-06-10T08:00:00.000Z",
+    "duration_minutes": 30,
+    "location": "Parklands",
+    "owner_username": "alice123"
+  }
+]
+ */
 router.get('/walkrequests/open', async function(req, res, next) {
     console.log("!111");
     const [rows] = await pool.query(SELECT_Dog_Info);
