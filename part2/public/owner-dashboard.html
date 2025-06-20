@@ -70,6 +70,22 @@
 
   <script>
     const { createApp, ref, onMounted } = Vue;
+            async function logout() {
+          try {
+           const res = await fetch('/api/users/logout', {
+            method: 'POST',
+            credentials: 'include'
+          });
+          if (res.ok) {
+            window.location.href = '/index.html';
+          } else {
+            error.value = 'Logout failed';
+          }
+        } catch (err) {
+          console.error(err);
+          error.value = 'Logout request failed';
+        }
+      }
 
     createApp({
       setup() {
@@ -92,22 +108,6 @@
             error.value = 'Failed to load walk requests';
           }
         }
-        async function logout() {
-          try {
-           const res = await fetch('/api/users/logout', {
-            method: 'POST',
-            credentials: 'include'
-          });
-          if (res.ok) {
-            window.location.href = '/index.html';
-          } else {
-            error.value = 'Logout failed';
-          }
-        } catch (err) {
-          console.error(err);
-          error.value = 'Logout request failed';
-        }
-      }
 
         async function submitWalkRequest() {
           try {
