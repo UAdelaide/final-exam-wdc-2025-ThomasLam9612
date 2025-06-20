@@ -68,10 +68,12 @@
 
         async function getPets(){
           try {
-            const res = await fetch('https://dog.ceo/api/breeds/image/random')
-
-            dogs.value = await res.json();
-            console.log("dogs",dogs.value)
+            const res =await fetch ("https://dog.ceo/api/breeds/image/random");
+            console.log(res)
+            const data = await res.json();
+            console.log(data);
+            this.dogImages = data.message
+            
           } catch (err) {
             error.value = 'Failed to load walk requests';
           }
