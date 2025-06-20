@@ -3,20 +3,19 @@ const path = require('path');
 require('dotenv').config();
 const session = require("express-session");
 const pool = require("../part2/models/db");
-const MySQLStore  = require("express-mysql-session")(session);
+const MySQLStore = require("express-mysql-session")(session);
 
 const app = express();
 const store = new MySQLStore({
-  host:"localhost",
-  user:"root",
-  password:configs.database.mysqlPassword,
-  port: configs.database.mysqlPort || 3306,
-  database: configs.database.mysqlDatabase
-})
+  host: "localhost",
+  user: "root",
+  password: "root",
+  database: "DogWalkService"
+});
 app.use(session({
   secret: "sessionScrect",
   resave: false,
-  store:store,
+  store: store,
   saveUninitialized: false,
   cookie: { maxAge: 1000 * 60 * 60 }
 }));
