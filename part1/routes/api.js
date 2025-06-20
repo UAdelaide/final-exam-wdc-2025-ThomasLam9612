@@ -33,7 +33,8 @@ const summary = `SELECT
 FROM Users u
 LEFT JOIN WalkRatings r ON r.walker_id = u.user_id
 WHERE u.role = 'walker'
-GROUP BY u.user_id
+GROUP BY u.user_id`;
+
 router.get('/dogs', async function(req, res, next) {
     console.log("!111");
     const [rows] = await pool.query(SELECT_Dog_Info);
