@@ -82,7 +82,7 @@ router.post('/getPets', async (req, res) => {
     if (!req.session.user) {
     return res.status(401).json({ error: 'Not logged in' });
   }
-  
+  db.query('SELECT user_id, username, email, role FROM Users');
 });
 
 module.exports = router;
