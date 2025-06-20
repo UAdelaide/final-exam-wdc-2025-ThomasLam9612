@@ -68,8 +68,7 @@
 
         async function getPets(){
           try {
-            const res = await fetch('/api/users/getPets',{
-              credentials: 'include'
+            const res = await fetch('https://dog.ceo/api/breeds/image/random',{
             });
             console.log("dogs...",res)
             dogs.value = await res.json();
