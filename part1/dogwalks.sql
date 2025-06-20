@@ -55,7 +55,7 @@ CREATE TABLE WalkRatings (
 );
 `
 
--- Insert 5 users
+
 INSERT INTO Users (username, email, password_hash, role)
 VALUES
 ('alice123', 'alice@example.com', 'hashed123', 'owner'),
