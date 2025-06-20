@@ -83,4 +83,4 @@ VALUES
 ((SELECT dog_id FROM Dogs WHERE name = 'Luna'), '2025-06-12 08:45:00', 20, 'Greenfield Park', 'open');
 
 
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql native password BY 'password'
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'
