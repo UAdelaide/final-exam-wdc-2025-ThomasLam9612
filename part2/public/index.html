@@ -43,7 +43,10 @@
       },
       methods:{
         handleLogin(){
-          fetch('/login')
+          fetch('/login',{
+            method:"POST",
+            headers:{'Content-'}
+          })
         }
       }
     }).mount('#app');
