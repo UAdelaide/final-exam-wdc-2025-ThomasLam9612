@@ -77,7 +77,7 @@ router.post('/logout', async (req, res) => {
   });
 });
 
-router.post('logout', async (req, res) => {
+router.post('/getPets', async (req, res) => {
   console.log("log out...");
   req.session.destroy((err) => {
     if (err) {

@@ -114,7 +114,7 @@
 
         async function getPets(){
           try {
-            const res = await fetch('/api/dogs/getPets',{
+            const res = await fetch('/api/users/getPets',{
               credentials: 'include'
             });
             dogs.value = await res.json();
