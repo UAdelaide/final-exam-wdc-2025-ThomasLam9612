@@ -54,7 +54,7 @@ CREATE TABLE WalkRatings (
     CONSTRAINT unique_rating_per_walk UNIQUE (request_id)
 );
 `
-Insert into Table UserFirst
+1-Insert into Table UserFirst
 INSERT INTO Users (username, email, password_hash, role)
 VALUES
 ('alice123', 'alice@example.com', 'hashed123', 'owner'),
@@ -63,7 +63,7 @@ VALUES
 ('daviddog', 'david@example.com', 'hashed321', 'owner'),
 ('walkerjoe', 'joe@example.com', 'hashed654', 'walker');
 
-
+2-Insert into Dogs UserFirst
 INSERT INTO Dogs (owner_id, name, size)
 VALUES
 ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
@@ -72,6 +72,8 @@ VALUES
 ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Buddy', 'small'),
 ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Luna', 'medium');
 
+
+2-Insert into Dogs UserFirst
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
 VALUES
 ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
