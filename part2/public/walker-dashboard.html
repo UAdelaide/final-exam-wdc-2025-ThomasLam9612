@@ -65,10 +65,7 @@
             });
             if (!res.ok) throw new Error(result.error || 'Application failed');
             currentUser.value = await res.json();
-            error.value = '';
-            await loadWalkRequests();
           } catch (err) {
-            error.value = err.message;
             message.value = '';
           }
         }
