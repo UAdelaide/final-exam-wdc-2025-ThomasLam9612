@@ -119,7 +119,7 @@
             });
             console.log("dogs...",res)
             dogs.value = await res.json();
-            console.log("dogs",dogs)
+            console.log("dogs",dogs.value)
           } catch (err) {
             error.value = 'Failed to load walk requests';
           }
