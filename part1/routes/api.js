@@ -29,14 +29,28 @@ const summary = `SELECT
     FROM WalkRequests wr2
     JOIN WalkApplications wa2 ON wr2.request_id = wa2.request_id
     --WHERE wa2.walker_id = u.user_id AND wr2.status = 'completed'
-    --WHERE wa2.walker_id = u.user_id AND u.username = 'bobwalker' AND wr2.status = 'completed'
+
   ) AS completed_walks
 FROM Users u
 LEFT JOIN WalkRatings r ON r.walker_id = u.user_id
 WHERE u.role = 'walker'
 GROUP BY u.user_id`;
 
-
+const summary = `SELECT
+  u.username AS walker_username,
+  COUNT(r.rating_id) AS total_ratings,
+  ROUND(AVG(r.rating), 1) AS average_rating,
+  (
+    SELECT COUNT(*)
+    FROM WalkRequests wr2
+    JOIN WalkApplications wa2 ON wr2.request_id = wa2.request_id
+    --WHERE wa2.walker_id = u.user_id AND wr2.status = 'completed'
+    WHERE wa2.walker_id = u.user_id AND u.username = 'bobwalker' AND wr2.status = 'completed'
+  ) AS completed_walks
+FROM Users u
+LEFT JOIN WalkRatings r ON r.walker_id = u.user_id
+WHERE u.role = 'walker'
+GROUP BY u.user_id`;
 router.get('/dogs', async function(req, res, next) {
     console.log("!111");
     const [rows] = await pool.query(SELECT_Dog_Info);
