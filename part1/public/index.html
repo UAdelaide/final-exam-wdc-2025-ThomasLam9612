@@ -71,7 +71,7 @@
           }
         }
 
-        async function submitWalkRequest() {
+        async function loadDogs() {
           try {
             const res = await fetch('/api/dogs');
             const result = await res.json();
@@ -82,13 +82,12 @@
             dogs.value = result;
 
           } catch (err) {
- 
+
           }
         }
 
         onMounted(() => {
-          loadWalks();
-          getPets();
+          loadDogs();
         });
 
         return {
