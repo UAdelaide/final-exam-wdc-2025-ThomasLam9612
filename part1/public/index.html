@@ -80,11 +80,7 @@
 
         async function submitWalkRequest() {
           try {
-            const res = await fetch('/api/dogs', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(form.value)
-            });
+            const res = await fetch('/api/dogs');
             const result = await res.json();
 
             if (!res.ok) throw new Error(result.error || 'Error submitting walk request');
