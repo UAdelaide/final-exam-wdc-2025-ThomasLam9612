@@ -65,7 +65,7 @@
             });
             if (!res.ok) throw new Error(result.error || 'Application failed');
             currentUser.value = await res.json();
-            message.value="Welcome " + currentUser.value.username
+
           } catch (err) {
             error.value = 'cannot Fetch Current User';
           }
