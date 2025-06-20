@@ -81,3 +81,6 @@ VALUES
 ((SELECT dog_id FROM Dogs WHERE name = 'Rocky'), '2025-06-11 10:00:00', 60, 'Hills Park', 'open'),
 ((SELECT dog_id FROM Dogs WHERE name = 'Buddy'), '2025-06-11 14:00:00', 30, 'City Square', 'open'),
 ((SELECT dog_id FROM Dogs WHERE name = 'Luna'), '2025-06-12 08:45:00', 20, 'Greenfield Park', 'open');
+
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql native password BY 'password'
