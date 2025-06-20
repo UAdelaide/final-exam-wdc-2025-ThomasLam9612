@@ -68,9 +68,8 @@
 
         async function getPets(){
           try {
-            const res = await fetch('https://dog.ceo/api/breeds/image/random',{
-            });
-            console.log("dogs...",res)
+            const res = await fetch('https://dog.ceo/api/breeds/image/random')
+
             dogs.value = await res.json();
             console.log("dogs",dogs.value)
           } catch (err) {
