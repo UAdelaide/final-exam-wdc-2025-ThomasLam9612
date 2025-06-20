@@ -2,8 +2,14 @@ const express = require('express');
 const path = require('path');
 require('dotenv').config();
 const session = require("express-session");
-const MySQLStore  = require("express-mysql-session")(session)
-
+const MySQLStore  = require("express-mysql-session")(session);
+app.use(session({
+  secret: "S",
+  resave: false,
+  store:store,
+  saveUninitialized: false,
+  cookie: { maxAge: 1000 * 60 * 60 }
+}));
 const app = express();
 
 // Middleware
