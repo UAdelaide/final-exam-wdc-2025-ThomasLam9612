@@ -3,6 +3,8 @@ const path = require('path');
 require('dotenv').config();
 const session = require("express-session");
 const MySQLStore  = require("express-mysql-session")(session);
+
+const app = express();
 app.use(session({
   secret: "sessionScrect",
   resave: false,
@@ -10,8 +12,6 @@ app.use(session({
   saveUninitialized: false,
   cookie: { maxAge: 1000 * 60 * 60 }
 }));
-const app = express();
-
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
