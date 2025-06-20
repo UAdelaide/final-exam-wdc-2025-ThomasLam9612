@@ -64,7 +64,7 @@
               credentials:"include"
             });
             if (!res.ok) throw new Error(result.error || 'Application failed');
-            message.value = result.message;
+            currentUser.value = await res.json();
             error.value = '';
             await loadWalkRequests();
           } catch (err) {
