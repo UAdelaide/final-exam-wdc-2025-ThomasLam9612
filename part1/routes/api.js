@@ -16,7 +16,7 @@ const pool = db.createPool({
   },
  */
 const SELECT_Dog_Info = "SELECT Dogs.name AS dog_name, Dogs.size, Users.username AS owner_username  FROM Dogs Left Join Users ON owner_id = Users.user_id";
-const openWalkRequests = `SELECT request_id, d.name AS dog_name, requested_time, location,u.username AS AS FROM WalkRequests wr
+const openWalkRequests = `SELECT request_id, d.name AS dog_name, requested_time, location,u.username AS owner_username FROM WalkRequests wr
 LEFT JOIN Dogs d ON wr.dog_id = d.dog_id
 LEFT JOIN Users u ON d.owner_id = u.user_id`;
 router.get('/dogs', async function(req, res, next) {
