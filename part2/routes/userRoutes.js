@@ -87,6 +87,7 @@ router.post('/getPets', async (req, res) => {
       `SELECT dog_id, name FROM Dogs WHERE owner_id = ?`,
       [req.session.user.user_id]
     );
+    
     res.json(rows);
   } catch (err) {
     res.status(500).json({ error: 'Failed to load dogs' });
