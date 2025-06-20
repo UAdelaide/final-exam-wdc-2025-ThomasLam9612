@@ -72,7 +72,9 @@
         }
 
         async function applyToWalk(requestId) {
-          if
+          if(!currentUser.value) {
+            error.value = 'not load';
+          }
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
