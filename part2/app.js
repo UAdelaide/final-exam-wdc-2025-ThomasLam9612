@@ -5,6 +5,13 @@ const session = require("express-session");
 const MySQLStore  = require("express-mysql-session")(session);
 
 const app = express();
+const store = new MySQLStore({
+  host:configs.database.mysqlHost,
+  user:configs.database.mysqlUsername,
+  password:configs.database.mysqlPassword,
+  port: configs.database.mysqlPort || 3306,
+  database: configs.database.mysqlDatabase
+})
 app.use(session({
   secret: "sessionScrect",
   resave: false,
