@@ -77,8 +77,9 @@
             const result = await res.json();
 
             for (let dog in result) {
-              dog.image = await 
+              dog.image = await getPetsImages();
             }
+            dogs.value = 
             if (!res.ok) throw new Error(result.error || 'Error submitting walk request');
 
             message.value = result.message;
