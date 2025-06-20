@@ -104,11 +104,12 @@
             error.value = 'Logout failed';
           }
         } catch (err) {
-    console.error(err);
-    error.value = 'Logout request failed';
-  }
+          console.error(err);
+          error.value = 'Logout request failed';
         }
-        async function submitWalkRequest() {
+      }
+
+      async function submitWalkRequest() {
           try {
             const res = await fetch('/api/walks', {
               method: 'POST',
