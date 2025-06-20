@@ -14,7 +14,8 @@ db.createPool({
   },
  */
 const SELECT_APPLICATION_FORM =
-  "SELECT * FROM Dogs";
+  "SELECT name AS dog_name,
+   FROM Dogs";
 router.get('/', function(req, res, next) {
 
 });
