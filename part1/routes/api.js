@@ -19,4 +19,4 @@ router.get('/dogs', function(req, res, next) {
     return res.send(rows);
 });
 
-module.exports
+module.exports = router;
