@@ -4,7 +4,7 @@ require('dotenv').config();
 const session = require("express-session");
 const MySQLStore  = require("express-mysql-session")(session);
 app.use(session({
-  secret: "S",
+  secret: "sessionScrect",
   resave: false,
   store:store,
   saveUninitialized: false,
