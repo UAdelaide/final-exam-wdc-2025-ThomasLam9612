@@ -55,6 +55,7 @@ CREATE TABLE WalkRatings (
 );
 `
 
+-- Insert 5 users
 INSERT INTO Users (username, email, password_hash, role)
 VALUES
 ('alice123', 'alice@example.com', 'hashed123', 'owner'),
@@ -63,6 +64,7 @@ VALUES
 ('daviddog', 'david@example.com', 'hashed321', 'owner'),
 ('walkerjoe', 'joe@example.com', 'hashed654', 'walker');
 
+-- Insert 5 dogs using subqueries to get owner_id via username
 INSERT INTO Dogs (owner_id, name, size)
 VALUES
 ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
@@ -71,6 +73,7 @@ VALUES
 ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Buddy', 'small'),
 ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Luna', 'medium');
 
+-- Insert 5 walk requests using subqueries to get dog_id via dog name
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
 VALUES
 ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
