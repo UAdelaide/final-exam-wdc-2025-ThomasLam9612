@@ -3,9 +3,9 @@ db.createPool({
     host:localhost,
     user:root,
     password:root,
-    database:
+    database:DogWalkService
 
-})
+});
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  
 });
