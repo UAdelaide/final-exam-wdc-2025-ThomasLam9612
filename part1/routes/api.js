@@ -63,7 +63,7 @@ router.get('/walkrequests/open', async function(req, res, next) {
 
 
 /**
- * Return a summary of each walker with their average rating and number of completed walks.
+ * Return a summary of each walker with their average rating and number of completed walks. /api/walkers/summary
 [
   {
     "walker_username": "bobwalker",
