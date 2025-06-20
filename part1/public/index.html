@@ -42,6 +42,7 @@
             console.log(res)
             const data = await res.json();
             console.log(data);
+            this.dogImages = data.message
         }
       }
     }).mount('#app');
